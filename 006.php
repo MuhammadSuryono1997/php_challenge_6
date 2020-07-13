@@ -1,11 +1,11 @@
 <?php
 
-function TrimContent($content, $length)
+$TrimContent = function($content, $length)
 {
     return substr(strip_tags($content), 0, $length)."...";
-}
+};
 
-$tulisan = TrimContent("ini adalah tulisan yang sangat panjang",8);
+$tulisan = $TrimContent("ini adalah tulisan yang sangat panjang",8);
 echo $tulisan;
 
 

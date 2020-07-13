@@ -1,9 +1,13 @@
 <?php
+function Write($angka, $kelipatan="")
+{
+    $option = ['', 'satu ', 'dua ', 'tiga ', 'empat ', 'lima ','enam ', 'tujuh ', 'delapan ', 'sembilan ', 'sepuluh ', 'sebelas ', 'dua belas ', 'tiga belas ', 'empat belas ', 'lima belas ', 'enam belas ', 'tujuh belas ', 'delapan belas ','sembilan belas '];
+    return $option[$angka].$kelipatan;
+}
 
 function Convert ($angka)
 {
-    $option = ['', 'satu ', 'dua ', 'tiga ', 'empat ', 'lima ','enam ', 'tujuh ', 'delapan ', 'sembilan ', 'sepuluh ', 'sebelas ', 'dua belas ', 'tiga belas ', 'empat belas ', 'lima belas ', 'enam belas ', 'tujuh belas ', 'delapan belas ','sembilan belas '];
-
+    
     $puluhan = round($angka / 10);
     $satuan = $angka % 10;
     $terbilang = '';
@@ -11,16 +15,16 @@ function Convert ($angka)
     {
         if($puluhan == 1)
         {
-            $terbilang .= $option[$angka];
+            $terbilang .= Write($angka);
         }elseif($puluhan > 1)
         {
-            $terbilang .= $option[$puluhan]."puluh";
-            $terbilang .= $option[$satuan];
+            $terbilang .= Write($puluhan,"puluh");
+            $terbilang .= Write($satuan);
         }
     }
     elseif ($satuan != 0) 
     {
-        $terbilang .= $option[$satuan];
+        $terbilang .= Write($satuan);
     }
     
     return $terbilang;

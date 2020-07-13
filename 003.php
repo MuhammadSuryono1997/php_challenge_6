@@ -2,8 +2,8 @@
 
 function KebabCase($string)
 {
-    $pisahkan = explode(' ',$string);
-    return join("-",$pisahkan);
+    $pisahkan = function($str){return explode(' ',$str);};
+    return join("-",$pisahkan($string));
 }
 
 $hello = KebabCase("hello world again");
