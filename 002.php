@@ -8,6 +8,5 @@ function SnakeCase($string)
 
 $hello = SnakeCase("hello world again");
 print($hello."\n");
-// var_dump($hello);
 
 ?>
