@@ -2,13 +2,14 @@
 function Mode($data)
 {
     $data = join(' ',$data);
+    echo $data."\n";
     $new_data = explode(' ', $data);
     $cg = function($data){
         $values = array_count_values($data);
         $mode = array_search(max($values), $values);
         return $mode;
     };
-
+    var_dump($new_data);
     return $cg($new_data);
 }
 $numbers = [1,2,3,4,5,6,6,8,8,6,9];
